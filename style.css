@@ -11,10 +11,11 @@ body {
   background-color: var(--main-background);
   font-family: "Lexend Deca", sans-serif;
   color: var(--main-paragraph);
+  margin: 0;
 }
 
 .main {
-  padding: 15% 5%;
+  padding: 50px 25px;
 }
 
 .card {
@@ -102,6 +103,16 @@ h1,
 }
 
 @media (min-width: 700px) {
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .main {
+    padding: 0 10%;
+  }
   .card {
     flex-direction: row-reverse;
     align-items: stretch;
