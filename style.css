@@ -1,0 +1,146 @@
+:root {
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --main-heading: hsla(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+  background-color: var(--main-background);
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--main-paragraph);
+}
+
+.main {
+  padding: 15% 5%;
+}
+
+.card {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  flex: 1;
+}
+.desc {
+  flex: 2;
+}
+
+picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+picture::before {
+  background-color: rgba(91, 20, 119, 0.514);
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+picture::before,
+picture img {
+  border-radius: 10px 10px 0 0;
+}
+
+picture img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.desc {
+  text-align: center;
+  padding: 5% 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+.stat-number {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: var(--main-heading);
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+.stat-name {
+  color: var(--stat-headings);
+  margin: 5px auto;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.desc-text {
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  .card {
+    flex-direction: row-reverse;
+    align-items: stretch;
+  }
+
+  picture::before,
+  picture img {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .desc,
+  .image {
+    flex: 1;
+  }
+
+  .desc {
+    padding: 5%;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+    margin: 0;
+  }
+
+  .desc-text,
+  .stats {
+    max-width: 80%;
+  }
+
+  .desc-text {
+    font-size: 1.5rem;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
